@@ -11,11 +11,12 @@ class beeCog:
         beeScript = useful.getscript()
         tosend = ""
         for counter in range (1, len(beeScript)):
-            try:
-                await ctx.guild.get_member(userID).send(tosend)
-                tosend = ""
-            except:
-                break
+            if counter % 2000 = 0:
+                try:
+                    await ctx.guild.get_member(userID).send(tosend)
+                    tosend = ""
+                except:
+                    break
             else:
                 tosend += beeScript[counter]
 
