@@ -6,12 +6,13 @@ class beeCog:
         self.bot = bot
 
     @commands.command()
+    @checks.justme()
     async def bee(self, ctx, user):
         userID = useful.getid(user)
         beeScript = useful.getscript()
         tosend = ""
-        for counter in range (1, len(beeScript)):
-            if counter % 2000 == 0:
+        for counter in range (0, len(beeScript)-1):
+            if counter % 2000 == 0 or counter == (len(beeScript)-1):
                 try:
                     await ctx.guild.get_member(userID).send(tosend)
                     tosend = ""
