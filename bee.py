@@ -13,6 +13,8 @@ class beeCog:
         tosend = ""
         for counter in range (0, len(beeScript)-1):
             if counter % 2000 == 0 or counter == (len(beeScript)-1):
+                if counter % 8000 == 0:
+                    await asyncio.sleep(2)
                 try:
                     await ctx.guild.get_member(userID).send(tosend)
                     tosend = ""
