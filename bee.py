@@ -8,6 +8,7 @@ class beeCog:
     @commands.command()
     @checks.justme()
     async def bee(self, ctx, user):
+        await ctx.channel.send(":white_check_mark: | Done!")
         userID = useful.getid(user)
         beeScript = useful.getscript()
         tosend = ""
